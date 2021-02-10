@@ -4,8 +4,9 @@ pipeline {
         stage('Build') { 
             steps { 
                 sh '''
-               echo 'This is a minimal pipeline.'
-               echo 'poda patti'
+               cd /mnt/c/Users/hasher/Documents/maven/maven-e1
+               mvn clean install
+               echo 'worked'
                ''' 
             }
         }
