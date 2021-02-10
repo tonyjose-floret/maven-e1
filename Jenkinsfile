@@ -8,6 +8,9 @@ pipeline {
         stage ('Initialize') {
             steps {
                 sh '''
+                    export M2_HOME=/usr/local/apache-maven
+                    export M2=$M2_HOME/bin 
+                    export PATH=$M2:$PATH
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
