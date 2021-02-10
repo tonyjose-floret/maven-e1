@@ -1,13 +1,22 @@
-pipeline { 
-    agent any  
-    stages { 
-        stage('Build') { 
-            steps { 
+pipeline {
+    agent any
+    tools { 
+        maven 'maven' 
+        jdk 'jdk' 
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
                 sh '''
-               cd /mnt/c/Users/hasher/Documents/maven/maven-e1
-               mvn clean install
-               echo 'worked'
-               ''' 
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
             }
         }
     }
