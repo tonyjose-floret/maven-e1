@@ -1,22 +1,12 @@
-pipeline {
-    agent any
-    tools { 
-        maven 'maven' 
-        jdk 'jdk' 
-    }
-    stages {
-        stage ('Initialize') {
-            steps {
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build') { 
+            steps { 
                 sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
+               echo 'This is a minimal pipeline.'
+               echo 'poda patti'
+               ''' 
             }
         }
     }
