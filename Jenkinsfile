@@ -19,7 +19,10 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo 'This is a minimal pipeline.'
+                sh '''
+                    cd /mnt/c/Users/hasher/Documents/maven/maven-e1
+                    mvn clean install
+                '''
             }
         }
     }
